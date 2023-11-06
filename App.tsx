@@ -3,6 +3,7 @@ import { SafeAreaView, View } from 'react-native';
 import { theme } from './src/components/theme/theme';
 import { ThemeProvider } from '@shopify/restyle';
 import { Button } from './src/components/Button/button';
+import { Icon } from './src/assets/icons/icon';
 
 function App (): JSX.Element {
   return (
@@ -33,6 +34,7 @@ function App (): JSX.Element {
             margin='s12'
           />
         </View>
+        <Icon name='eyeOff' color='error' />
       </SafeAreaView>
     </ThemeProvider>
   );
