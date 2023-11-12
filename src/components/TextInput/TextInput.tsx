@@ -4,7 +4,7 @@ import { Box, BoxProps } from '../Box/Box'
 import { useAppTheme } from '../../hooks/useAppTheme'
 import { useRef } from 'react'
 
-interface TextInputProps extends RNTextInputProps {
+export interface TextInputProps extends RNTextInputProps {
     label: string,
     errorMessage?: string,
     RightComponet?: React.ReactElement;

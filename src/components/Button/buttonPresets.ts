@@ -10,26 +10,41 @@ export interface ButtonUI {
 export interface IBUttonProps extends TTouchableOpacityBoxProps {
     title: string,
     loading?: boolean,
-    preset?: ButtonPreset
+    preset?: ButtonPreset,
+    disabled?: boolean
 }
-export const ButtonPresets: Record<ButtonPreset, ButtonUI> = {
+export const ButtonPresets: Record<ButtonPreset, {
+    default: ButtonUI,
+    disabled: ButtonUI
+}> = {
     primary: {
-        container: {
-            backgroundColor: 'primary'
+        default: {
+            container: {
+                backgroundColor: 'primary'
+            },
+            content: 'primaryContrast'
         },
-        content: 'primaryContrast'
+        disabled: {
+            container: {
+                backgroundColor: 'gray4'
+            },
+            content: 'gray2'
+        }
     },
     outline: {
-        container: {
-            borderWidth: 1,
-            borderColor: 'primary'
+        default: {
+            container: {
+                borderWidth: 1,
+                borderColor: 'primary'
+            },
+            content: 'primary'
         },
-        content: 'primary'
+        disabled: {
+            container: {
+                borderWidth: 1,
+                borderColor: 'gray4'
+            },
+            content: 'gray2'
+        }
     },
-    secondary: {
-        container: {
-            backgroundColor: 'carrotSecondary'
-        },
-        content: 'primaryContrast'
-    }
 };

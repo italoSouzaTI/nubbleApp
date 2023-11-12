@@ -4,7 +4,7 @@ import { TouchableOpacityBox } from "../Box/Box";
 import { ButtonPresets, IBUttonProps } from "./buttonPresets";
 import { ActivityIndicator } from "../ActivityIndicator.tsx";
 
-export type ButtonPreset = 'primary' | 'outline' | 'secondary';
+export type ButtonPreset = 'primary' | 'outline' | '';
 
 
 
@@ -12,13 +12,15 @@ export function Button ({
     loading,
     title,
     preset = 'primary',
+    disabled,
     ...TTouchableOpacityBoxProps
 }: IBUttonProps) {
 
-    const buttonPreset = ButtonPresets[preset]
+    const buttonPreset = ButtonPresets[preset][disabled ? 'disabled' : 'default']
 
     return (
         <TouchableOpacityBox
+            disabled={disabled || loading}
             paddingHorizontal="s20"
             height={50}
             alignItems="center"
@@ -28,7 +30,7 @@ export function Button ({
             {...TTouchableOpacityBoxProps}
         >
             {loading ? (
-                <ActivityIndicator />
+                <ActivityIndicator color={buttonPreset.content} />
             ) : (
                 <Text
                     preset="paragraphMedium"
