@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface NubbleAppTests : XCTestCase
+@interface nubbleTests : XCTestCase
 
 @end
 
-@implementation NubbleAppTests
+@implementation nubbleTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
